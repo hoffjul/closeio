@@ -63,7 +63,7 @@ module Closeio
       #
 
       def list_lead_status_changes(options={})
-        get(status_change_path, options)
+        get(lead_status_change_path, options)
       end
       
       
