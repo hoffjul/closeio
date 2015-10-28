@@ -58,6 +58,15 @@ module Closeio
         delete("#{call_path}#{id}/")
       end
 
+      #
+      #  Status change Activities
+      #
+
+      def list_status_changes(options={})
+        get(status_change_path, options)
+      end
+      
+      
       private
 
       def activity_path
@@ -74,6 +83,10 @@ module Closeio
 
       def call_path
         "activity/call/"
+      end
+      
+      def status_change_path
+        "activity/status_change/"
       end
 
     end
