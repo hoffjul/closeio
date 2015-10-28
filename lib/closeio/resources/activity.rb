@@ -62,7 +62,7 @@ module Closeio
       #  Status change Activities
       #
 
-      def list_status_changes(options={})
+      def list_lead_status_changes(options={})
         get(status_change_path, options)
       end
       
@@ -85,8 +85,8 @@ module Closeio
         "activity/call/"
       end
       
-      def status_change_path
-        "activity/status_change/"
+      def lead_status_change_path
+        "activity/status_change/lead/"
       end
 
     end
