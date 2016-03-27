@@ -8,7 +8,7 @@ I :heart: Close.io, so if you have problems using the gem or would like to see s
 Add this line to your application's Gemfile:
 ````ruby
   # in your Gemfile
-  gem 'closeio', '~> 2.0'
+  gem 'closeio', '~> 2.4'
 
   # then...
   bundle install
@@ -43,6 +43,19 @@ Add this line to your application's Gemfile:
   smart_views.leads
 ````
 
+### Options
+
+You can disable the logger by passing in a second argument when creating a new client:
+```ruby
+  client = Closeio::Client.new("api key", false)
+```
+
+Some servers running on SSL need [specific configurations](https://github.com/lostisland/faraday/wiki/Setting-up-SSL-certificates) for the Faraday dependency.
+If you're running on Heroku with SSL enabled, you need to pass in the path of the CA certificate when creating a new client:
+```ruby
+  client = Closeio::Client.new("api key", true, '/usr/lib/ssl/certs/ca-certificates.crt')
+```
+
 ### History
 
 View the [changelog](https://github.com/taylorbrooks/closeio/blob/master/CHANGELOG.md)
@@ -58,4 +71,4 @@ Everyone is encouraged to help improve this project. Here are a few ways you can
 - Suggest or add new features
 
 ### Copyright
-Copyright (c) 2015 Taylor Brooks. See LICENSE for details.
+Copyright (c) 2016 Taylor Brooks. See LICENSE for details.

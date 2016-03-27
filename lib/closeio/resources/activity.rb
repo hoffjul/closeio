@@ -34,6 +34,10 @@ module Closeio
         get(email_path, options)
       end
 
+      def find_email(id)
+        get("#{email_path}#{id}/")
+      end
+
       def create_email(body)
         post(email_path, body)
       end
@@ -49,6 +53,10 @@ module Closeio
       #
       #  Call Activities
       #
+
+      def list_calls(options={})
+        get(call_path, options)
+      end
 
       def create_call(options={})
         post(call_path, options)
